@@ -1,0 +1,31 @@
+import random
+
+# Introduction to the game
+print("Welcome to the guessing game!")
+print("I have generated a random number between 1 and 100.")
+print("Your goal is to guess the number by entering a guess.")
+print("I will tell you if your guess is too high or too low.")
+print("Let's start!\n")
+
+# Generate a random number between 1 and 100
+number = random.randint(1, 100)
+
+# Initialize the number of attempts
+attempts = 0
+
+# Loop until the player guesses the correct number
+while True:
+    # Ask the player for their guess
+    guess = int(input("Enter your guess: "))
+
+    # Increment the number of attempts
+    attempts += 1
+
+    # Check if the guess is too high, too low, or correct
+    if guess > number:
+        print("Too high! Try again.")
+    elif guess < number:
+        print("Too low! Try again.")
+    else:
+        print("\nCorrect! You won in {} attempts.".format(attempts))
+        break
